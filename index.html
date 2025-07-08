@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oyun Merkezi 🎮</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎮 Oyun Seç</h1>
+
+  <div class="games">
+    <!-- Aktif Oyun -->
+    <div class="game active" onclick="startSlotGame()">
+      <img src="slot-icon.png" alt="Slot" />
+      <h2>Slot Oyunu 🎰</h2>
+    </div>
+
+    <!-- Pasif Oyunlar -->
+    <div class="game coming">
+      <img src="lock-icon.png" alt="Coming Soon" />
+      <h2>Kart Oyunu ♠️</h2>
+      <span class="soon">Yakında</span>
+    </div>
+
+    <div class="game coming">
+      <img src="lock-icon.png" alt="Coming Soon" />
+      <h2>Zeka Oyunu 🧠</h2>
+      <span class="soon">Yakında</span>
+    </div>
+
+    <div class="game coming">
+      <img src="lock-icon.png" alt="Coming Soon" />
+      <h2>Şans Kutusu 🎁</h2>
+      <span class="soon">Yakında</span>
+    </div>
+  </div>
+
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
