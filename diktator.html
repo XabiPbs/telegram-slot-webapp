@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diktatör Oyunu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #1e1e1e, #3c3c3c);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    #game {
+      max-width: 500px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    button {
+      background-color: #ffcc00;
+      color: black;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #80ff80;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <h2>Ülke krizde!</h2>
+    <p>Ekonomi çöküşün eşiğinde. Ne yapacaksın?</p>
+    <button onclick="choose('vergiler')">Vergileri artır</button><br>
+    <button onclick="choose('sansur')">Medya sansürü uygula</button><br>
+    <button onclick="choose('disyardim')">Dış yardım iste</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let support = 50;
+    let fear = 50;
+    let strategy = 50;
+
+    function choose(option) {
+      let result = document.getElementById("result");
+
+      if (option === "vergiler") {
+        support -= 10;
+        strategy += 15;
+        result.innerHTML = "Halk isyan etti ama bütçe düzeldi.";
+      } else if (option === "sansur") {
+        fear += 20;
+        support -= 5;
+        result.innerHTML = "Halk korktu, muhalefet sustu.";
+      } else if (option === "disyardim") {
+        support += 10;
+        strategy -= 5;
+        result.innerHTML = "Halk umutlandı ama itibar zedelendi.";
+      }
+
+      result.innerHTML += `<br><br><strong>Destek:</strong> ${support} | <strong>Korku:</strong> ${fear} | <strong>Zeka:</strong> ${strategy}`;
+    }
+  </script>
+</body>
+</html>
